@@ -198,6 +198,8 @@ printhelp(BSTNode<Key, E>* root, int level) const {
   printhelp(root->right(), level+1);  // Do right subtree
 }
 
+template <typename Key, typename E>
+void BST<Key, E>::
 printPostOrder(BSTNode<Key, E>* root, int level) const {
   if (root == NULL) return;           // Empty tree
   printPostOrder(root->left(), level+1);   // Do left subtree
