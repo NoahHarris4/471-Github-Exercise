@@ -197,3 +197,10 @@ printhelp(BSTNode<Key, E>* root, int level) const {
   visit(root);						  // Print node value
   printhelp(root->right(), level+1);  // Do right subtree
 }
+
+printPostOrder(BSTNode<Key, E>* root, int level) const {
+  if (root == NULL) return;           // Empty tree
+  printPostOrder(root->left(), level+1);   // Do left subtree
+  printPostOrder(root->right(), level+1);  // Do right subtree
+  visit(root);						  // Print node value
+}
